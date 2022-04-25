@@ -19,7 +19,11 @@
       <div class="logo">TodoList</div>
     </header>
     <main class="content">
-      CONTENT
+      <div class="todo-container">
+        <h1>Ma todo</h1>
+        <div class="todo-form"></div>
+        <div class="todo-list"></div>
+      </div>
     </main>
     <footer>
       <p>Todev 2022 © Tous droits réservés</p>

@@ -7,6 +7,7 @@
   --text-color-light: #fff;
   --box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  --border: 1px solid #eee;
 }
 
 * {
@@ -32,6 +33,7 @@ p {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
+  color: var(--text-color);
 }
 
 header {
@@ -48,7 +50,25 @@ header {
 
 .content {
   flex: 1;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
   padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.todo-container {
+  padding: 1.5rem;
+  background-color: #fff;
+  border: var(--border);
+  border-radius: 3px;
+  min-width: 60rem;
+  min-height: 40rem;
+}
+
+.todo-container h1 {
+  text-align: center;
 }
 
 footer {
