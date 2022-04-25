@@ -80,6 +80,10 @@ ul {
   box-shadow: var(--box-shadow);
 }
 
+.low-opacity {
+  opacity: 0.5;
+}
+
 header {
   background-color: var(--primary);
   padding: 1.5rem;

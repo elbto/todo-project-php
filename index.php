@@ -4,7 +4,7 @@ const ERROR_TOO_SHORT = 'Veuillez entrer au moins 5 caractères';
 
 $filename = __DIR__ . '/data/todos.json';
 $error = '';
-
+$todo = '';
 $todos = [];
 
 if (file_exists($filename)) {
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="todo-container">
         <h1>Ma todo</h1>
         <form action="/" method="POST" class="todo-form">
-          <input name="todo" type="text">
+          <input value="<?= $todo ?>" name="todo" type="text">
           <button class="btn btn-primary">Ajouter</button>
         </form>
         <?php if ($error) : ?>
@@ -62,9 +62,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif ?>
         <ul class="todo-list">
           <?php foreach ($todos as $todo) : ?>
-            <li class="todo-item">
+            <li class="todo-item <?= $todo['done'] ? 'low-opacity' : '' ?>">
               <span class="todo-name"><?= $todo['name'] ?></span>
-              <button class="btn btn-primary btn-small">Valider</button>
+              <a href="/edit-todo.php?id=<?= $todo['id'] ?>">
+                <button class="btn btn-primary btn-small"><?= $todo['done'] ? 'Annuler' : 'Valider' ?></button>
+              </a>
               <button class="btn btn-danger btn-small">Supprimer</button>
               <?php if ($todo['done']) : ?>
                 <span class="todo-done">✔</span>
